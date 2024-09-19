@@ -1,5 +1,8 @@
 package clienteServidor;
 
+import java.awt.Container;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.ServerSocket;
@@ -28,6 +31,19 @@ public class Servidor extends JFrame{
 		super("Servidor");
 		
 		Container contenedor = getContentPane();
+		
+		// crear campoIntroducir y registrar componente  de escucha
+		campoIntroducir = new JTextField();
+		campoIntroducir.setEditable(false);
+		campoIntroducir.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+				
+			}
+		});
+		
 	}
 	
 		
