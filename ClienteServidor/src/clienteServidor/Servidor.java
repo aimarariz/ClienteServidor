@@ -59,7 +59,7 @@ public class Servidor extends JFrame{
 		setSize(300,150);
 		setVisible(true);
 		
-	}
+	 }// fin de la construccion de la clase Servidor
 	
 		
 	}
