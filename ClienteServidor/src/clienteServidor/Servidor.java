@@ -1,5 +1,6 @@
 package clienteServidor;
 
+import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -7,6 +8,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.security.PublicKey;
 
 import javax.swing.JFrame;
 import javax.swing.JTextArea;
@@ -37,12 +39,17 @@ public class Servidor extends JFrame{
 		campoIntroducir.setEditable(false);
 		campoIntroducir.addActionListener(new ActionListener() {
 			
+			// enviar mensaje al cliente
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				
+				enviarDatos(e.getActionCommand());
+				campoIntroducir.setText("");
 				
 				
 			}
 		});
+		contenedor.add(campoIntroducir, BorderLayout.NORTH);
 		
 	}
 	
