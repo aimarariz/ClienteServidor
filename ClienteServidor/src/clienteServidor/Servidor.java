@@ -11,6 +11,7 @@ import java.net.Socket;
 import java.security.PublicKey;
 
 import javax.swing.JFrame;
+import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
@@ -50,6 +51,13 @@ public class Servidor extends JFrame{
 			}
 		});
 		contenedor.add(campoIntroducir, BorderLayout.NORTH);
+		
+		// crear areaPantalla
+		areaPantalla = new JTextArea();
+		contenedor.add(new JScrollPane(areaPantalla), BorderLayout.CENTER);
+		
+		setSize(300,150);
+		setVisible(true);
 		
 	}
 	
