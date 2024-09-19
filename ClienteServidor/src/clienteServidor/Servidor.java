@@ -21,6 +21,15 @@ public class Servidor extends JFrame{
 	private Socket conexion;
 	
 	private int contador = 1;
+	
+	// configuracion de la GUI
+	public Servidor() {
+		
+		super("Servidor");
+		
+		Container contenedor = getContentPane();
+	}
+	
 		
 	}
 	
