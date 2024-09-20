@@ -60,6 +60,11 @@ public class Servidor extends JFrame{
 		setVisible(true);
 		
 	 }// fin de la construccion de la clase Servidor
+		
+	// confijurar y ejecutar el servidor
+	public void ejecutarServidor() {
+		
+	}
 	
 		
 	}
