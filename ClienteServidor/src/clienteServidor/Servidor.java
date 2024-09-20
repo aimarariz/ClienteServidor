@@ -182,8 +182,15 @@ public class Servidor extends JFrame{
 				}); // fin de la clase interna y de la llamada a SwingUtilities.invoerLater 
 	}
 	
+	public static void name(String args[]) {
 		
-}
+		Servidor aplicacion = new Servidor();
+		aplicacion.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		aplicacion.ejecutarServidor();
+	}
+	
+		
+} 
 	
 
 	
