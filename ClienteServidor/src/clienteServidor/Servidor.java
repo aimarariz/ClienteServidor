@@ -190,7 +190,7 @@ public class Servidor extends JFrame{
 	}
 	
 		
-} 
+} // fin de la clase Servidor
 	
 
 	
