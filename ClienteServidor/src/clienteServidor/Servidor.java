@@ -15,6 +15,7 @@ import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import javax.swing.SwingUtilities;
 
 // creacion de la clase Servidor
 public class Servidor extends JFrame{
@@ -168,6 +169,18 @@ public class Servidor extends JFrame{
 		}
 	}
 		
+	// metodo utiliratio que es llamado desde otros subprocesos para manipular areaPantalla en el subproceso despachador de eventos
+	private void mostarMensaje(final String mensajeAMOstrar) {
+		SwingUtilities.invokeLater(
+				new Runnable() {
+					
+					@Override
+					public void run() {
+						areaPantalla.append(mensajeAMOstrar);
+						areaPantalla.setCaretPosition(areaPantalla.getText().length());
+					}
+				}); // fin de la clase interna y de la llamada a SwingUtilities.invoerLater 
+	}
 	
 		
 }
