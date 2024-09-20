@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.ServerSocket;
@@ -96,6 +97,14 @@ public class Servidor extends JFrame{
 		}
 		
 	} // fin del metodo ejecutarServidor
+	
+	// esperar que la conexion llegue, despues mostrar informacion de la conexion
+	private void esperarConexion() throws IOException{
+		
+		mostrarMensaje("Esperando una conexion\n");
+		conexion = servidor.accept();
+		mostrarMensaje("Conexio "+ contador + " recibir de: " + conexion.getInetAddress().getHostName());
+	}
 	
 	
 }
