@@ -140,6 +140,21 @@ public class Servidor extends JFrame{
 		}while(!mensaje.equals("CLIENTE>>>> TERMINAR"));
 	} // fin del metodo procesarConexion
 	
+	// cerrar flujos y sockets
+	private void cerrarConexion() {
+		mostrarMensaje( "\nFinalizando la conexion\n");
+		establecerCampoTextoEditable(false);
+		
+		try {
+			salida.close();
+			entrada.close();
+			conexion.close();
+		}
+		catch (IOException excepcionES) {
+			excepcionES.printStackTrace();
+		}
+	}
+	
 		
 	
 		
