@@ -115,8 +115,30 @@ public class Servidor extends JFrame{
 				// establecer flujo de entrada para los objetos
 				entrada = new ObjectInputStream(conexion.getInputStream());
 				mostrarMensaje("\nSe recibieron los flujos de E/S\n");
+			}
+	
+	// procesar la informacion con el cliente
+	private void procesarConexion() throws IOException{
+		
+		// enviar mensaje de conexion exitosa al cliente
+		String mensaje = "Conexion exitosa";
+		enviarDatos(mensaje);
+		
+		// habilitar campoIntroducir para que el usuario del servidor pueda enviar mensajes
+		establecerCampoTextoEditable(true);
+		
+		do {
+			try {
+				mensaje = (String) entrada.readObject();
+				mostrarMensaje( "\n" + mensaje);
+			}
 			
-	}
+			catch(ClassNotFoundException exceptionClaseNoEncontrada) {
+				mostrarMensaje("\nSe recibio un tipo de objeto desconocido");
+			}
+			
+		}while(!mensaje.equals("CLIENTE>>>> TERMINAR"));
+	} // fin del metodo procesarConexion
 	
 		
 	
