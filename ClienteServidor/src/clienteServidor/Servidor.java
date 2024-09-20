@@ -64,10 +64,41 @@ public class Servidor extends JFrame{
 	// confijurar y ejecutar el servidor
 	public void ejecutarServidor() {
 		
-	}
-	
+		// configurar servidor para que reciba conexiones; pocesar la conexiones 
 		
-	}
+		try {
+			servidor = new ServerSocket(12345, 100); // paso 1: crear un objeto ServerSocket
+			
+			while(true) {
+				
+				try {
+					
+					esperarConexion(); // paso 2: esperar una conexion
+					obtenerFlujos(); // paso 3: obtener flujos de entrada y salida
+					procesarConexiones();// paso 4: procesar la conexion
+				}
+				
+				// procesar exe¡cepcion EOFException cuando el cliente cierre la conexion
+				catch (EOEFxception excepcionEOF) {
+					System.err.println("El servidor termino la conexion");
+				}
+				
+				finally {
+					cerrarCoenxion(); // paso 5: cerrar la conexion
+					contador = contador + 1;
+				}
+			} // fin de la intruccion while
+		} // fin de bloque try
+		
+		// procesar problemas con E/S
+		catch(IOEexeption excepcionES) {
+			excepcionES.printStrackTrace();
+		}
+		
+	} // fin del metodo ejecutarServidor
+	
+	
+}
 	
 	
 
