@@ -106,8 +106,24 @@ public class Servidor extends JFrame{
 		mostrarMensaje("Conexio "+ contador + " recibir de: " + conexion.getInetAddress().getHostName());
 	}
 	
+	// obtener flujos para enviar y recibir datos private void obtenerFlujos() throws IOExpected
+	private void obtenerFlujos() throws IOException{
+		
+		// establecer flujo de salida para los objetos
+				salida.flush();
+				
+				// establecer flujo de entrada para los objetos
+				entrada = new ObjectInputStream(conexion.getInputStream());
+				mostrarMensaje("\nSe recibieron los flujos de E/S\n");
+			
+	}
 	
+		
+	
+		
 }
+	
+
 	
 	
 
