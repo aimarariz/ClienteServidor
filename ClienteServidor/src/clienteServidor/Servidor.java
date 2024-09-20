@@ -154,7 +154,19 @@ public class Servidor extends JFrame{
 			excepcionES.printStackTrace();
 		}
 	}
-	
+	// enviar mensaje al cliente
+	private void enviarDatos(String mensaje) {
+		
+		try {
+			salida.writeObject(" SERVIDOR>>>> " + mensaje);
+			salida.flush();
+			mostrarMensaje( "\nSERVIDOR>>>> " + mensaje);
+		}
+		
+		catch (IOException exepcionES) {
+			areaPantalla.append( "\nError al escribir objeto");
+		}
+	}
 		
 	
 		
